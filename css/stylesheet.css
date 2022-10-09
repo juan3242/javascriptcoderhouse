@@ -1,0 +1,39 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    padding: 5%;
+    background-color: black;
+    color: white;
+}
+#buttonDarkMode, #buttonWhiteMode{
+    padding: 1%;
+    background-color: black;
+    color: white;
+    border: 0.1em solid white;
+}
+h1{
+    text-align: center;
+}
+#sectionTwo{
+    display: flex;
+    gap: 5em;
+    padding: 5%;
+    justify-content: center;
+}
+#sectionOne{
+    display: flex;
+    gap: 60em;
+}
+#gastoTotal{
+    text-align: center;
+}
+#buttonReset{
+    margin-left: 45%;
+    padding: 0.7%;
+    width: 10%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: 0.1em white solid;
+}
