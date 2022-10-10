@@ -69,19 +69,16 @@ function calcularGastosMensuales(){
             document.getElementById("contandoCadaGastobutton").addEventListener("click", contandoCadaGasto);
             function contandoCadaGasto(){
                 document.getElementById("sectionIntermedia").innerHTML = `total en gastos en ${gastos[noDelGasto]}, ${gastosX}
-                <input id="totalEnGastosXInput" placeholder="coloque el gasto"> <button id="contandoCadaGastoNoDosbutton">sigue</button>
-                <button id="totalEnGastosFuncionButton">resultado</button>.. presione sigue`;
+                <input id="totalEnGastosXInput" placeholder="coloque el gasto"> <button id="contandoCadaGastoNoDosbutton">sigue</button>`;
                 document.getElementById("contandoCadaGastoNoDosbutton").addEventListener("click", contandoCadaGastoNoDos);
-                document.getElementById("totalEnGastosFuncionButton").addEventListener("click", totalEnGastosFuncion);
+                if(!gastos[noDelGasto]){
+                    totalEnGastosFuncion();
+                };
                 function contandoCadaGastoNoDos(){
                     totalEnGastosX = document.getElementById("totalEnGastosXInput").value;
                     gastosX.push(totalEnGastosX);
                     noDelGasto++;
-                    document.getElementById("sectionIntermedia").innerHTML = `${gastosX}, <button id="contandoCadaGastobutton">sigue</button>
-                    <button id="totalEnGastosFuncionButton">resultado</button>.. presione sigue, si ya calculo el valor de todos los gastos 
-                    presione en siguiente`;
-                    document.getElementById("totalEnGastosFuncionButton").addEventListener("click", totalEnGastosFuncion);
-                    document.getElementById("contandoCadaGastobutton").addEventListener("click", contandoCadaGasto);
+                    contandoCadaGasto();
                 }
             };
             function totalEnGastosFuncion(){
@@ -91,8 +88,7 @@ function calcularGastosMensuales(){
                        totalEnGastos += parseFloat(item);
                     }
                 );
-                document.getElementById("sectionIntermedia").innerHTML = `${gastosX} <button id="totalEnGastosFuncionNoDos">sigue</button>`
-                document.getElementById("totalEnGastosFuncionNoDos").addEventListener("click", totalEnGastosFuncionNoDos);
+                totalEnGastosFuncionNoDos();
                 function totalEnGastosFuncionNoDos(){
                     let textoDeValorDeGastosssNo2 = "";
                     gastosX.forEach(function(laburada){ textoDeValorDeGastosssNo2 += laburada.toString() + "<br>"});
