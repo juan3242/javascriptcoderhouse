@@ -24,7 +24,7 @@ h1{
 }
 #sectionOne{
     display: flex;
-    gap: 60em;
+    gap: 30em;
 }
 #gastoTotal{
     text-align: center;

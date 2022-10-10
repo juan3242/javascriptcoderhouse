@@ -1,6 +1,12 @@
 //simulador de gastos mensuales 
 let gastos = ["agua", "gas", "luz", "alimentos"];
 let gastosX = [];
+fechaActual();
+function fechaActual(){
+    const DateTime = luxon.DateTime;
+    const dt = DateTime.now();
+    document.getElementById("fecha").innerHTML = `${dt.toLocaleString(DateTime.DATE_HUGE)}. ${dt.toLocaleString(DateTime.TIME_SIMPLE)} `;
+};
 function calcularGastosMensuales(){
     gastos = ["agua", "gas", "luz", "alimentos"];
     gastosX = [];
@@ -99,6 +105,7 @@ function calcularGastosMensuales(){
                     grupoDeValorGastado[0].innerHTML = textoDeValorDeGastosssNo2;
                     document.getElementById("gastoTotal").innerHTML = "gasto total :" + totalEnGastos;
                     document.getElementById("sectionIntermedia").innerHTML = ``;
+                    fechaActual();
                 };
             };
         };
@@ -129,6 +136,7 @@ document.getElementById("buttonDarkMode").innerHTML = dark;
 document.getElementById("buttonWhiteMode").innerHTML = white;
 document.getElementById("buttonDarkMode").addEventListener("click", modoOscuro);
 document.getElementById("buttonWhiteMode").addEventListener("click", modoClaro);
+
 
 
 /*
